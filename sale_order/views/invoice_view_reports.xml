@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="account_invoice_report_add_field"  inherit_id="account.report_invoice_document">
+    <xpath expr="//div/table[@name='invoice_line_table']"  position="before">
+        <div class="col-auto col-3 mw-100 mb-2" t-if="o.assigned_doctor" name="Assigned Doctor">
+            <strong>Assigned Doctor: </strong>
+            <p class="m-0" t-field="o.assigned_doctor"/>
+        </div>
+        <div class="col-auto col-3 mw-100 mb-2" t-if="o.warehouse_id" name="Branch">
+            <strong>Branch: </strong>
+            <p class="m-0" t-field="o.warehouse_id"/>
+        </div>
+
+    </xpath>
+    </template>
+</odoo>
