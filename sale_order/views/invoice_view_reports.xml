@@ -1,16 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <template id="account_invoice_report_add_field"  inherit_id="account.report_invoice_document">
-    <xpath expr="//div/table[@name='invoice_line_table']"  position="before">
-        <div class="col-auto col-3 mw-100 mb-2" t-if="o.assigned_doctor" name="Assigned Doctor">
-            <strong>Assigned Doctor: </strong>
-            <p class="m-0" t-field="o.assigned_doctor"/>
-        </div>
-        <div class="col-auto col-3 mw-100 mb-2" t-if="o.warehouse_id" name="Branch">
-            <strong>Branch: </strong>
-            <p class="m-0" t-field="o.warehouse_id"/>
-        </div>
 
+    <template id="account_invoice_report_add_field"  inherit_id="account.report_invoice_document">
+
+    <xpath expr="//div[@name='invoice_date']"  position="after">
+	
+        <div class="col-auto col-3 mw-100 mb-2" t-if="o.assigned_doctor" name="Assigned Doctor">
+		
+            <strong>Assigned Doctor: </strong>
+			
+            <p class="m-0" t-field="o.assigned_doctor"/>
+		
+        </div>
+		
+
+        <div class="col-auto col-3 mw-100 mb-2" t-if="o.warehouse_id" name="Branch">
+	
+            <strong>Branch: </strong>
+			
+            <p class="m-0" t-field="o.warehouse_id"/>
+			
+        </div>
+		
     </xpath>
+		
     </template>
+	
 </odoo>
+
+ <!-- <odoo> -->
+ <!-- <template id="account_invoice_report_add_field" inherit_id="account.report_invoice_document"> -->
+  <!-- <xpath expr="//div[@name='invoice_date']" position="replace"> -->
+    <!-- <table style="width:50%"> -->
+     <!-- <colgroup> -->
+       <!-- <col span="2" style="background-color: #D6EEEE" align="left"/> -->
+        <!-- </colgroup> -->
+
+
+		<!-- <tr> -->
+         <!-- <div class="col-auto col-3 mw-100 mb-2" t-if="o.invoice_date" name="Invoice Date"> -->
+		 <!-- <td> -->
+             <!-- <strong> Invoice Date: </strong> -->
+			 <!-- </td> -->
+			 <!-- <td> -->
+             <!-- <p class="m-0" t-field="o.invoice_date"/> -->
+			<!-- </td> -->
+         <!-- </div> -->
+
+		 <!-- </tr> -->
+
+
+     <!-- <xpath expr="//div[@name='ref']" position="replace"> -->
+	  <!-- <tr> -->
+
+         <!-- <div class="col-auto col-3 mw-100 mb-2" t-if="o.ref" name="Refrence"> -->
+		 <!-- <td> -->
+             <!-- <strong>Refrence:</strong> -->
+			 <!-- </td> -->
+			 <!-- <td> -->
+            <!-- <p class="m-0" t-field="o.ref"/> -->
+			<!-- </td> -->
+         <!-- </div> -->
+
+	 <!-- </tr> -->
+	 <!-- </xpath> -->
+
+
+	   <!-- <tr> -->
+
+        <!-- <div class="col-auto col-3 mw-100 mb-2" t-if="o.invoice_date_due" name="Due Date"> -->
+		 <!-- <td> -->
+             <!-- <strong>Due Date:</strong> -->
+			 <!-- </td> -->
+			 <!-- <td> -->
+             <!-- <p class="m-0" t-field="o.invoice_date_due"/> -->
+			<!-- </td> -->
+         <!-- </div> -->
+
+		 <!-- </tr> -->
+
+       <!-- <tr> -->
+         <!-- <div class="col-auto col-3 mw-100 mb-2" t-if="o.assigned_doctor" name="Assigned Doctor"> -->
+		 <!-- <td> -->
+             <!-- <strong> Assigned Doctor: </strong> -->
+			 <!-- </td> -->
+			 <!-- <td> -->
+             <!-- <p class="m-0" t-field="o.assigned_doctor"/> -->
+			<!-- </td> -->
+         <!-- </div> -->
+
+		 <!-- </tr> -->
+		 <!-- <tr> -->
+		  <!-- <div class="col-auto col-3 mw-100 mb-2" t-if="o.warehouse_id" name="Branch"> -->
+		  <!-- <td> -->
+             <!-- <strong>Branch:</strong> -->
+			 <!-- </td> -->
+			 <!-- <td> -->
+             <!-- <p class="m-0" t-field="o.warehouse_id"/> -->
+			 <!-- </td> -->
+         <!-- </div> -->
+		  <!-- </tr> -->
+
+			<!-- </table> -->
+			<!-- </xpath> -->
+			 
+
+
+
+	
+   
+        
+
+<!-- </template> -->
+    
+	 
+
+ <!-- </odoo> -->
+
+

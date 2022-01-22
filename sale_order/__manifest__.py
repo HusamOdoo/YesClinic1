@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-##############################################################################
-#
-# Copyright 2019 EquickERP
-#
-##############################################################################
 
 {
     'name': "Sale_order",
@@ -21,6 +16,7 @@
         'views/sale_order.xml',
         'views/invoice_view_reports.xml',
         'views/invoice_view.xml',
+        
         
     ],
     'installable': True,
