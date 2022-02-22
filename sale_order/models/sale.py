@@ -14,7 +14,9 @@ from odoo.exceptions import ValidationError
 
 class SaleOrder(models.Model):
     _inherit = 'sale.order'
-
+    
+    
+    
     def _prepare_invoice(self):
         """
         Prepare the dict of values to create the new invoice for a sales order. This method may be
@@ -60,4 +62,36 @@ class SaleOrder(models.Model):
     warehouse_id = fields.Many2one('stock.warehouse', required=True, string="warehouse")
 
 
+
+
+
+
     
+    
+
+class ResPartner(models.Model):
+    _inherit = 'res.partner'
+    
+    phone = fields.Char(string="phone")
+    
+    
+    
+
+    @api.constrains('phone')
+    def _check_phone_no(self):
+        phone_count = self.env['res.partner'].search_count([('phone','=',self.phone)])
+        phone_no = len(self.phone)
+        if phone_count > 1:
+        	raise ValidationError(_('Phone Number Shoud be unique in company'))
+        	
+        
+
+       
+            
+
+
+
+        
+
+
+

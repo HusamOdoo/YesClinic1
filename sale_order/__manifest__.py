@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 {
-    'name': "Sale_order",
+    'name': "Sale_order3",
     'version': '14.0.1.0',
     'category': 'Sales',
     'author': 'Fatima Ismail',
@@ -9,7 +9,7 @@
     'description': """
       
     """,
-    'depends': ['sale_management', 'sale_stock','stock'],
+    'depends': [ 'base_setup','sale'],
     
     'website': "",
     'data': [

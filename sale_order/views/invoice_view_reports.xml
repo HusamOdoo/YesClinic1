@@ -3,7 +3,20 @@
 
     <template id="account_invoice_report_add_field"  inherit_id="account.report_invoice_document">
 
-    <xpath expr="//div[@name='invoice_date']"  position="after">
+    <xpath expr="//address[@t-field='o.partner_id']"  position="replace">
+                <strong>Customer: 
+                <address t-field ="o.partner_id"/>
+                
+                </strong>
+                    </xpath>
+                    
+     
+    <xpath expr="//td[@name='account_invoice_line_name']"  position="replace">
+        <td name="account_invoice_line_name"><span t-field="line.product_id.name" t-options="{'widget': 'text'}"/></td>
+
+    </xpath>
+
+        <xpath expr="//div[@name='invoice_date']"  position="after">
 	
         <div class="col-auto col-3 mw-100 mb-2" t-if="o.assigned_doctor" name="Assigned Doctor">
 		
@@ -21,8 +34,14 @@
             <p class="m-0" t-field="o.warehouse_id"/>
 			
         </div>
+        
+		
 		
     </xpath>
+     
+    
+    
+    
 		
     </template>
 	
