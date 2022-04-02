@@ -26,7 +26,7 @@ class AccountMoveInherit(models.Model):
             sales = self.env['sale.order'].sudo().search([('name', '=', rec.invoice_origin)], limit=1)
             rec.branch_id = sales.warehouse_id.id
             rec.tag_sale_ids = sales.tag_ids.ids
-            tag = rec.assigned_doctor.tags_id.filtered(lambda p: "ST:" in p.name and "BR:" not in p.name)
+            tag = rec.assigned_doctor.tags_id.filtered(lambda p: "ST:" in p.name and "BR:" not in p.name and rec.tag_sale_ids[0].name + ";" in p.name)
             if not tag and rec.tag_sale_ids:
                 tag = rec.assigned_doctor.tags_id.filtered(
                     lambda p: rec.branch_id.code in p.name and rec.tag_sale_ids[0].name + ";" in p.name)
